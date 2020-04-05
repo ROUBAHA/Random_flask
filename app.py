@@ -50,13 +50,13 @@ def emaill(person,equipe,sujet):
 
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
-    server.login('mastersim1920@gmail.com', 'sim20192020')
+    server.login('myemail', 'password')
     message = MIMEMultipart('alternative')
     message['Subject'] = 'Random'
-    message['From'] = 'mastersim1920@gmail.com'
+    message['From'] = 'myemail'
     message['To'] = person
     message.attach(MIMEText('Salam {} .\n Votre sujet  : {}.\n Votre equipe :\n {} \n Bon courage.'.format(data[0],sujet,team)))
-    server.sendmail('mastersim1920@gmail.com',person, message.as_string())
+    server.sendmail('myemail',person, message.as_string())
     server.quit()
     print("well done !!")
     return 0
