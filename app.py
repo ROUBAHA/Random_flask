@@ -1,7 +1,7 @@
 import random as rn
 from flask import Flask,render_template,url_for,request
 import pandas
-
+import tempfile
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import smtplib
@@ -63,7 +63,6 @@ def emaill(person,equipe,sujet):
 
 @app.route('/')
 def index():
-    print("hhhh")
     return render_template('index.html')
 
 @app.route('/randomm', methods=['POST'])
